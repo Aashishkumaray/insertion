@@ -1,0 +1,65 @@
+//Q4
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[6]={5,1,5,5,2,3};
+    int n=6;
+    for(int i=1;i<n;i++){
+        int j=i;
+        while(j>=1 && arr[j]<=arr[j-1]){
+            swap(arr[j],arr[j-1]);
+            j--;
+        }
+    }
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    int sum=0;
+    for(int i=0;i<n;i++){
+        sum *=10;
+        sum +=arr[i];
+    }
+    cout<<sum<<endl;
+    for(int i=n-1;i>=1;i--){
+        if(arr[i]!=arr[i-1]){
+            swap(arr[i],arr[i-1]);
+            break;
+        }
+    }
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+     int num=0;
+    for(int i=0;i<n;i++){
+        num *=10;
+        num +=arr[i];
+    }
+    cout<<num<<endl;
+    int minimum_sum=sum+num;
+    cout<<"Minimum sum"<<minimum_sum;
+}
+
+
+//Q-5 sorting the srings
+#include<iostream>
+using namespace std;
+int main(){
+     string arr[]={"aash","abhay","polar","aditya","dala"};
+     int n=5;
+     for(int i=0;i<n;i++){
+        bool flag=true;
+        for(int j=0;j<n-1-i;j++){
+            if(arr[j]>arr[j+1]){
+            swap(arr[j],arr[j+1]);
+            flag=false;
+            }
+        }
+        if(flag==true) break;
+     }
+     for(int i=0;i<n;i++){
+        cout<<arr[i]<<endl;
+     }
+      cout<<endl;
+}
